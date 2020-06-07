@@ -1,0 +1,12 @@
+SELECT MAX(salary) FROM Employee WHERE Salary NOT IN ( SELECT Max(Salary) FROM Employee)
+
+SELECT MAX(Salary) From Employee WHERE Salary < ( SELECT Max(Salary) FROM Employee)
+
+
+SELECT Id, Salary FROM Employee e WHERE 2=(SELECT COUNT(DISTINCT Salary) FROM Employee p WHERE e.Salary<=p.Salary)
+
+SELECT Salary FROM (SELECT Salary FROM Employee ORDER BY salary DESC LIMIT 2) AS EMP
+
+SELECT TOP 1 Salary FROM ( SELECT TOP 2 Salary FROM Employee ORDER BY Salary DESC) AS MyTable ORDER BY Salary ASC
+
+
