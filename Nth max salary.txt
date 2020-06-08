@@ -1,0 +1,8 @@
+select distinct hiredate from emp a where &n = (select count(distinct sal) from emp b where a.sal>=b.sal);
+
+SELECT *
+FROM Employee
+WHERE to_char(hire_date,’mon’) = ‘Jan’
+
+
+select name , concat(substr(name,1,3),substr(phno,1,3)) as password from users order by 1;
